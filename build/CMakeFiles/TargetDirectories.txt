@@ -1,0 +1,3 @@
+/home/vebly/code/cpp/snake/build/CMakeFiles/Snake.dir
+/home/vebly/code/cpp/snake/build/CMakeFiles/edit_cache.dir
+/home/vebly/code/cpp/snake/build/CMakeFiles/rebuild_cache.dir
