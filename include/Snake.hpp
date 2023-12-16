@@ -2,21 +2,35 @@
 #define SNAKE
 #include "SnakeSegment.hpp"
 #include "SFML/System/Vector2.hpp"
-#include "variables.hpp"
 #include "Grid.hpp"
+#include "Directions.hpp"
+#include <SFML/Graphics/RenderWindow.hpp>
+extern Grid& gameGrid;
+extern sf::RenderWindow window;
 class Snake{
 private:
-    SnakeSegment* head = nullptr;
-    SnakeSegment* tail = nullptr;
- 
+    SnakeSegment* head = new SnakeSegment; 
+    SnakeSegment* tail = head;
+    Directions direction = Directions::UP;
 public:
-    void grow(){
-        SnakeSegment* newTail = new SnakeSegment; 
-        newTail->link = tail; 
-        tail = newTail;
-    }
+    int length = 0;
+    void grow();
+    void update();
+    void changeDirection(Directions newDirection);
+    void draw();
     Snake(int x, int y){
-        head->setPosition(gameGrid.getPosition(x,y));
+        head->setPosition(sf::Vector2<int>(x,y));
+        head->prev = nullptr;
+        head->next = nullptr;
     }
+    ~Snake(){
+        SnakeSegment* current = head->next;
+        while(current != nullptr){
+            delete current->prev;
+            current = current->next; 
+        }
+        delete tail;
+    }
+    
 };
 #endif //SNAKE 
