@@ -7,6 +7,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 extern Grid& gameGrid;
 extern sf::RenderWindow window;
+extern bool gameOver;
+
 class Snake{
 private:
     SnakeSegment* head = new SnakeSegment; 
@@ -18,6 +20,7 @@ public:
     void update();
     void changeDirection(Directions newDirection);
     void draw();
+    void changeColor(sf::Color color);
     Snake(int x, int y){
         head->setPosition(sf::Vector2<int>(x,y));
         head->prev = nullptr;

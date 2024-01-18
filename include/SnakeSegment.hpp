@@ -14,9 +14,10 @@ private:
 public:
     SnakeSegment* prev = nullptr;
     SnakeSegment* next = nullptr;
-    void setPosition(sf::Vector2<int> newPosition);
     sf::Vector2<int> getPosition();
     sf::CircleShape getSprite();
+    void setPosition(sf::Vector2<int> newPosition);
+    void setColor(sf::Color color); 
     SnakeSegment(){
         sprite.setFillColor(sf::Color::Green);
         sprite.setRadius(SnakeSegmentRadius);

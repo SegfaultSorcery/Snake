@@ -11,5 +11,6 @@ const int gridColumns = 192;
 const int gridRows = 108;
 float SnakeSegmentRadius = 10;
 float appleRadius = 5;
+bool gameOver = false;
 
 #endif // VARIABLES

@@ -11,3 +11,7 @@ sf::Vector2<int> SnakeSegment::getPosition(){
 sf::CircleShape SnakeSegment::getSprite(){
     return sprite;
 }
+
+void SnakeSegment::setColor(sf::Color color){
+    sprite.setFillColor(color);
+}

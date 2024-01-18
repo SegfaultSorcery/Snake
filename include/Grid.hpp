@@ -18,7 +18,7 @@ private:
         grid.reserve(gridRows+1);
         for(int i = 0; i <= gridRows; i++ ){
             for(int j = 0; j <= gridColumns; j++){
-                grid[i].push_back(sf::Vector2f(i*20, j*20)); 
+                grid[i].push_back(sf::Vector2f(j*20, i*20)); 
             }
         }
     }
